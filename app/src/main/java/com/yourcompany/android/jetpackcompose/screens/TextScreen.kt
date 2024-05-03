@@ -44,8 +44,8 @@ fun MyText() {
     )
 }
 
-@Preview
 @Composable
-fun TextScreenPreview() {
-    TextScreen()
+@Preview
+fun MyTextPreview() {
+    MyText()
 }
