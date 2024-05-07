@@ -32,43 +32,30 @@
  * THE SOFTWARE.
  */
 
-package com.yourcompany.android.jetpackcompose.app
+package com.yourcompany.android.jetpackcompose.screens
 
-import androidx.compose.animation.Crossfade
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import com.yourcompany.android.jetpackcompose.router.BackButtonHandler
 import com.yourcompany.android.jetpackcompose.router.JetFundamentalsRouter
 import com.yourcompany.android.jetpackcompose.router.Screen
-import com.yourcompany.android.jetpackcompose.screens.AlertDialogScreen
-import com.yourcompany.android.jetpackcompose.screens.BoxScreen
-import com.yourcompany.android.jetpackcompose.screens.ColumnScreen
-import com.yourcompany.android.jetpackcompose.screens.ExploreButtonsScreen
-import com.yourcompany.android.jetpackcompose.screens.NavigationScreen
-import com.yourcompany.android.jetpackcompose.screens.ProgressIndicatorScreen
-import com.yourcompany.android.jetpackcompose.screens.RowScreen
-import com.yourcompany.android.jetpackcompose.screens.ScaffoldScreen
-import com.yourcompany.android.jetpackcompose.screens.SurfaceScreen
-import com.yourcompany.android.jetpackcompose.screens.TextFieldScreen
-import com.yourcompany.android.jetpackcompose.screens.TextScreen
 
 @Composable
-fun JetFundamentalsApp() {
-  Surface(color = MaterialTheme.colors.background) {
-    Crossfade(targetState = JetFundamentalsRouter.currentScreen) { screenState ->
-      when (screenState.value) {
-        is Screen.Navigation -> NavigationScreen()
-        is Screen.Text -> TextScreen()
-        is Screen.TextField -> TextFieldScreen()
-        is Screen.Buttons -> ExploreButtonsScreen()
-        is Screen.ProgressIndicator -> ProgressIndicatorScreen()
-        is Screen.AlertDialog -> AlertDialogScreen()
-        is Screen.Row -> RowScreen()
-        is Screen.Column -> ColumnScreen()
-        is Screen.Box -> BoxScreen()
-        is Screen.Surface -> SurfaceScreen()
-        is Screen.Scaffold -> ScaffoldScreen()
-      }
-    }
+fun SurfaceScreen(modifier: Modifier = Modifier) {
+
+  Box(modifier = modifier.fillMaxSize()) {
+    MySurface(modifier = modifier.align(Alignment.Center))
   }
+
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
+}
+
+@Composable
+fun MySurface(modifier: Modifier) {
+  //TODO write your code here
 }
