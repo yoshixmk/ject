@@ -26,7 +26,7 @@ fun RowScreen() {
 }
 
 @Composable
-fun MyRow() {
+fun MyRow(modifier: Modifier = Modifier) {
   Row(
     verticalAlignment = Alignment.CenterVertically,
     horizontalArrangement = Arrangement.SpaceEvenly,
