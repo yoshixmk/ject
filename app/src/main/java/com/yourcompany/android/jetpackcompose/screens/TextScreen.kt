@@ -20,32 +20,32 @@ import com.yourcompany.android.jetpackcompose.router.Screen
 
 @Composable
 fun TextScreen() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        MyText()
-    }
+  Column(
+    modifier = Modifier.fillMaxSize(),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center
+  ) {
+    MyText()
+  }
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MyText() {
-    Text(
-        text = stringResource(id = R.string.jetpack_compose),
-        fontStyle = FontStyle.Italic,
-        color = colorResource(R.color.colorPrimary),
-        fontSize = 30.sp,
-        fontWeight = FontWeight.Bold
-    )
+  Text(
+    text = stringResource(id = R.string.jetpack_compose),
+    fontStyle = FontStyle.Italic,
+    color = colorResource(R.color.colorPrimary),
+    fontSize = 30.sp,
+    fontWeight = FontWeight.Bold
+  )
 }
 
 @Composable
 @Preview
 fun MyTextPreview() {
-    MyText()
+  MyText()
 }

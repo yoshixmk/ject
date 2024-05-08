@@ -15,33 +15,33 @@ import com.yourcompany.android.jetpackcompose.router.Screen
 
 @Composable
 fun BoxScreen() {
-    MyBox()
+  MyBox()
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MyBox(
-    modifier: Modifier = Modifier,
-    contentModifier: Modifier = Modifier
+  modifier: Modifier = Modifier,
+  contentModifier: Modifier = Modifier,
 ) {
-    Box(modifier = modifier.fillMaxSize()) {
-        Text(
-            text = stringResource(id = R.string.first),
-            fontSize = 22.sp,
-            modifier = contentModifier.align(Alignment.TopStart),
-        )
-        Text(
-            text = stringResource(id = R.string.second),
-            fontSize = 22.sp,
-            modifier = contentModifier.align(Alignment.Center),
-        )
-        Text(
-            text = stringResource(id = R.string.third),
-            fontSize = 22.sp,
-            modifier = contentModifier.align(Alignment.BottomEnd)
-        )
-    }
+  Box(modifier = modifier.fillMaxSize()) {
+    Text(
+      text = stringResource(id = R.string.first),
+      fontSize = 22.sp,
+      modifier = contentModifier.align(Alignment.TopStart),
+    )
+    Text(
+      text = stringResource(id = R.string.second),
+      fontSize = 22.sp,
+      modifier = contentModifier.align(Alignment.Center),
+    )
+    Text(
+      text = stringResource(id = R.string.third),
+      fontSize = 22.sp,
+      modifier = contentModifier.align(Alignment.BottomEnd)
+    )
+  }
 }

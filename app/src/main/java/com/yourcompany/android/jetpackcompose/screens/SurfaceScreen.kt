@@ -18,22 +18,22 @@ import com.yourcompany.android.jetpackcompose.router.Screen
 @Composable
 fun SurfaceScreen(modifier: Modifier = Modifier) {
 
-    Box(modifier = modifier.fillMaxSize()) {
-        MySurface(modifier = modifier.align(Alignment.Center))
-    }
+  Box(modifier = modifier.fillMaxSize()) {
+    MySurface(modifier = modifier.align(Alignment.Center))
+  }
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MySurface(modifier: Modifier) {
-    Surface(
-        modifier = modifier.size(100.dp),
-        color = Color.LightGray,
-        contentColor = colorResource(id = R.color.colorPrimary),
-    ) {
-        MyColumn()
-    }
+  Surface(
+    modifier = modifier.size(100.dp),
+    color = Color.LightGray,
+    contentColor = colorResource(id = R.color.colorPrimary),
+  ) {
+    MyColumn()
+  }
 }

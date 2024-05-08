@@ -18,25 +18,25 @@ val THREE_ELEMENT_LIST = listOf(R.string.first, R.string.second, R.string.third)
 
 @Composable
 fun RowScreen() {
-    MyRow()
+  MyRow()
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MyRow() {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        modifier = Modifier.fillMaxSize(),
-    ) {
-        THREE_ELEMENT_LIST.forEach { textId ->
-            Text(
-                text = stringResource(id = textId),
-                fontSize = 18.sp
-            )
-        }
+  Row(
+    verticalAlignment = Alignment.CenterVertically,
+    horizontalArrangement = Arrangement.SpaceEvenly,
+    modifier = Modifier.fillMaxSize(),
+  ) {
+    THREE_ELEMENT_LIST.forEach { textId ->
+      Text(
+        text = stringResource(id = textId),
+        fontSize = 18.sp
+      )
     }
+  }
 }

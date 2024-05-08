@@ -15,25 +15,25 @@ import com.yourcompany.android.jetpackcompose.router.Screen
 
 @Composable
 fun ColumnScreen() {
-    MyColumn()
+  MyColumn()
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MyColumn() {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly,
-        modifier = Modifier.fillMaxSize()
-    ) {
-        THREE_ELEMENT_LIST.forEach {
-            Text(
-                text = stringResource(id = it),
-                fontSize = 22.sp
-            )
-        }
+  Column(
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.SpaceEvenly,
+    modifier = Modifier.fillMaxSize()
+  ) {
+    THREE_ELEMENT_LIST.forEach {
+      Text(
+        text = stringResource(id = it),
+        fontSize = 22.sp
+      )
     }
+  }
 }

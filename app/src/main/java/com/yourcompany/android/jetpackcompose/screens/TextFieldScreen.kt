@@ -23,39 +23,39 @@ import com.yourcompany.android.jetpackcompose.router.Screen
 
 @Composable
 fun TextFieldScreen() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        MyTextField()
-    }
+  Column(
+    modifier = Modifier.fillMaxSize(),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center
+  ) {
+    MyTextField()
+  }
 
-    BackButtonHandler {
-        JetFundamentalsRouter.navigateTo(Screen.Navigation)
-    }
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
+  }
 }
 
 @Composable
 fun MyTextField() {
-    val textValue = remember { mutableStateOf("") }
-    val primaryColor = colorResource(id = R.color.colorPrimary)
+  val textValue = remember { mutableStateOf("") }
+  val primaryColor = colorResource(id = R.color.colorPrimary)
 
-    OutlinedTextField(
-        label = { Text(text = stringResource(id = R.string.email)) },
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = primaryColor,
-            focusedLabelColor = primaryColor,
-            cursorColor = primaryColor,
-        ),
-        keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Email),
-        value = textValue.value,
-        onValueChange = { textValue.value = it },
-    )
+  OutlinedTextField(
+    label = { Text(text = stringResource(id = R.string.email)) },
+    colors = TextFieldDefaults.outlinedTextFieldColors(
+      focusedBorderColor = primaryColor,
+      focusedLabelColor = primaryColor,
+      cursorColor = primaryColor,
+    ),
+    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Email),
+    value = textValue.value,
+    onValueChange = { textValue.value = it },
+  )
 }
 
 @Preview
 @Composable
 fun MyTextFieldPreview() {
-    MyTextField()
+  MyTextField()
 }
