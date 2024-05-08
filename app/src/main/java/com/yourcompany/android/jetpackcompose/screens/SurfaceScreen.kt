@@ -1,5 +1,6 @@
 package com.yourcompany.android.jetpackcompose.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -33,6 +34,8 @@ fun MySurface(modifier: Modifier) {
     modifier = modifier.size(100.dp),
     color = Color.LightGray,
     contentColor = colorResource(id = R.color.colorPrimary),
+    elevation = 1.dp,
+    border = BorderStroke(1.dp, Color.Black)
   ) {
     MyColumn()
   }
