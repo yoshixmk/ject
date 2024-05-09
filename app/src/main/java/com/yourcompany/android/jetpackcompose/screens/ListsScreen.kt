@@ -31,37 +31,67 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.yourcompany.android.jetpackcompose.router
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
+package com.yourcompany.android.jetpackcompose.screens
 
-/**
- * Class defining the screens we have in the app.
- *
- * These objects should match files we have in the screens package
- */
-sealed class Screen {
-  object Navigation : Screen()
-  object Text : Screen()
-  object TextField : Screen()
-  object Buttons : Screen()
-  object ProgressIndicator : Screen()
-  object AlertDialog : Screen()
-  object Row : Screen()
-  object Column : Screen()
-  object Box : Screen()
-  object Surface : Screen()
-  object Scaffold : Screen()
-  object Scrolling : Screen()
-  object List : Screen()
-  object Grid : Screen()
-}
+import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import com.yourcompany.android.jetpackcompose.R
+import com.yourcompany.android.jetpackcompose.router.BackButtonHandler
+import com.yourcompany.android.jetpackcompose.router.JetFundamentalsRouter
+import com.yourcompany.android.jetpackcompose.router.Screen
 
-object JetFundamentalsRouter {
-  var currentScreen: MutableState<Screen> = mutableStateOf(Screen.Navigation)
+private val items = listOf(
+  BookCategory(
+    R.string.android,
+    listOf(
+      R.drawable.android_aprentice,
+      R.drawable.saving_data_android,
+      R.drawable.advanced_architecture_android
+    )
+  ),
+  BookCategory(
+    R.string.kotlin,
+    listOf(
+      R.drawable.kotlin_coroutines,
+      R.drawable.kotlin_aprentice
+    )
+  ),
+  BookCategory(
+    R.string.swift,
+    listOf(
+      R.drawable.combine,
+      R.drawable.rx_swift,
+      R.drawable.swift_apprentice,
+    )
+  ),
+  BookCategory(
+    R.string.ios,
+    listOf(
+      R.drawable.core_data,
+      R.drawable.ios_apprentice,
+    )
+  )
+)
 
-  fun navigateTo(destination: Screen) {
-    currentScreen.value = destination
+@Composable
+fun ListScreen() {
+  MyList()
+
+  BackButtonHandler {
+    JetFundamentalsRouter.navigateTo(Screen.Navigation)
   }
 }
+
+@Composable
+fun MyList() {
+  //TODO add your code here
+}
+
+@Composable
+fun ListItem(bookCategory: BookCategory, modifier: Modifier = Modifier) {
+  //TODO add your code here
+}
+
+data class BookCategory(@StringRes val categoryResourceId: Int, val bookImageResources: List<Int>)

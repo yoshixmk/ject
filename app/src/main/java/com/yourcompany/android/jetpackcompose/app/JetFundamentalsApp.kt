@@ -44,10 +44,13 @@ import com.yourcompany.android.jetpackcompose.screens.AlertDialogScreen
 import com.yourcompany.android.jetpackcompose.screens.BoxScreen
 import com.yourcompany.android.jetpackcompose.screens.ColumnScreen
 import com.yourcompany.android.jetpackcompose.screens.ExploreButtonsScreen
+import com.yourcompany.android.jetpackcompose.screens.GridScreen
+import com.yourcompany.android.jetpackcompose.screens.ListScreen
 import com.yourcompany.android.jetpackcompose.screens.NavigationScreen
 import com.yourcompany.android.jetpackcompose.screens.ProgressIndicatorScreen
 import com.yourcompany.android.jetpackcompose.screens.RowScreen
 import com.yourcompany.android.jetpackcompose.screens.ScaffoldScreen
+import com.yourcompany.android.jetpackcompose.screens.ScrollingScreen
 import com.yourcompany.android.jetpackcompose.screens.SurfaceScreen
 import com.yourcompany.android.jetpackcompose.screens.TextFieldScreen
 import com.yourcompany.android.jetpackcompose.screens.TextScreen
@@ -68,6 +71,9 @@ fun JetFundamentalsApp() {
         is Screen.Box -> BoxScreen()
         is Screen.Surface -> SurfaceScreen()
         is Screen.Scaffold -> ScaffoldScreen()
+        is Screen.Scrolling -> ScrollingScreen()
+        is Screen.List -> ListScreen()
+        is Screen.Grid -> GridScreen()
       }
     }
   }
