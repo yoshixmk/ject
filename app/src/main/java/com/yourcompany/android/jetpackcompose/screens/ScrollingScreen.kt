@@ -3,10 +3,10 @@ package com.yourcompany.android.jetpackcompose.screens
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
@@ -30,8 +30,8 @@ fun ScrollingScreen() {
 
 @Composable
 fun MyScrollingScreen() {
-  Column(
-    modifier = Modifier.verticalScroll(rememberScrollState())
+  Row(
+    modifier = Modifier.horizontalScroll(rememberScrollState())
   ) {
     BookImage(
       imageResId = R.drawable.advanced_architecture_android,
@@ -46,6 +46,22 @@ fun MyScrollingScreen() {
       contentDescriptionResId = R.string.kotlin_coroutines
     )
   }
+  // Column(
+  //   modifier = Modifier.verticalScroll(rememberScrollState())
+  // ) {
+  //   BookImage(
+  //     imageResId = R.drawable.advanced_architecture_android,
+  //     contentDescriptionResId = R.string.advanced_architecture_android
+  //   )
+  //   BookImage(
+  //     imageResId = R.drawable.kotlin_aprentice,
+  //     contentDescriptionResId = R.string.kotlin_apprentice
+  //   )
+  //   BookImage(
+  //     imageResId = R.drawable.kotlin_coroutines,
+  //     contentDescriptionResId = R.string.kotlin_coroutines
+  //   )
+  // }
 }
 
 @Composable
